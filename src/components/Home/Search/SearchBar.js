@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { collection, query, where, getDocs } from 'firebase/firestore';
+import { getDatabase, ref, child, get } from 'firebase/database'; // Import the Realtime Database functions
 import { firestore } from '../../../firebase/config';
 import { NavLink, useNavigate } from 'react-router-dom';
 import './SearchBar.css';
@@ -32,9 +33,19 @@ const SearchBar = () => {
     }
   }, [searchTerm]);
 
-  const handleItemClick = (condition) => {
-    // Navigate to the selected item's page
-    navigate(`/condition/${condition.CODE}`);
+  const handleItemClick = async (condition) => {
+    try {
+      // Fetch the corresponding CPT code from the Realtime Database
+      const db = getDatabase();
+      const cptCodeRef = ref(db, `CPTCodes/${condition.CODE}/cptCode`);
+      const cptCodeSnapshot = await get(cptCodeRef);
+      const cptCode = cptCodeSnapshot.val();
+
+      // Navigate to the selected item's page with the fetched CPT code as a parameter
+      navigate(`/condition/${cptCode}`);
+    } catch (error) {
+      console.error('Error fetching CPT code:', error);
+    }
   };
 
   return (

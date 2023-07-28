@@ -11,6 +11,7 @@ import { getDatabase, ref, set, push } from "firebase/database";
 const firebaseConfig = {
   apiKey: "AIzaSyBYjePPKSC0w1HG5Aph-kKesWHlo81H--E",
   authDomain: "healthcare-2d074.firebaseapp.com",
+  databaseURL: "https://healthcare-2d074-default-rtdb.firebaseio.com/",
   projectId: "healthcare-2d074",
   storageBucket: "healthcare-2d074.appspot.com",
   messagingSenderId: "251032268165",

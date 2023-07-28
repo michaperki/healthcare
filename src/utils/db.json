@@ -1,0 +1,73 @@
+{
+    "Hospitals": {
+      "001": {
+        "hospitalName": "Baylor Scott & White",
+        "otherHospitalDetails": "Other details for Baylor Hospital"
+      },
+      "002": {
+        "hospitalName": "Medical City",
+        "otherHospitalDetails": "Other details for Another Hospital"
+      }
+    },
+    "CPTCodes": {
+      "AAA": {
+        "cptCode": "J1644",
+        "service": "Injection, heparin sodium, per 1000 units"
+      },
+      "AAB": {
+        "cptCode": "80053",
+        "service": "Comprehensive metabolic panel"
+      }
+    },
+    "HospitalPrices": {
+      "001": {
+        "AAA": {
+          "SELF_PAY": {
+            "price": 1.2
+          },
+          "AETNA": {
+            "price": 1.65
+          },
+          "CIGNA": {
+            "price": 1.74
+          }
+        },
+        "AAB": {
+          "SELF_PAY": {
+            "price": 155.2
+          },
+          "AETNA": {
+            "price": 213.4
+          },
+          "CIGNA": {
+            "price": 225.04
+          }
+        }
+      },      
+      "002": {
+        "AAA": {
+          "SELF_PAY": {
+            "price": 3.23
+          },
+          "AETNA": {
+            "price": "NA"
+          },
+          "CIGNA": {
+            "price": "NA"
+          }
+        },
+        "AAB": {
+          "SELF_PAY": {
+            "price": 1430.53
+          },
+          "AETNA": {
+            "price": 15.73
+          },
+          "CIGNA": {
+            "price": 30.20
+          }
+        }
+      }
+    }
+  }
+  
